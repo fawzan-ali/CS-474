@@ -1,0 +1,42 @@
+(declare-const p Bool)
+(declare-const q Bool)
+(declare-const r Bool)
+
+(assert (
+
+or (
+
+and
+(
+and (or q (not r))
+and (or (not p) r)
+and (or (not q) or r p)
+and (or p or q (not q))
+and (or (not r) q)
+)
+(
+or (and r (not q))
+or (and p (not r))
+or (and p (not q))
+or (and q and (not r) (not p))
+or (and q (not r))
+)
+
+and
+(
+or (and r (not q))
+or (and p (not r))
+or (and q and (not p) (not r))
+or (and q and (not p) (not q))
+or (and q (not r))
+)
+(
+and (or q (not r))
+and (or (not p) r)
+and (or q (not p))
+and (or (not q) or r p)
+and (or (not q) r)
+)
+)))
+
+(check-sat)
