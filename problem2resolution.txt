@@ -1,0 +1,21 @@
+python logictools/resolution/resolution.py
+Enter the formula in CNF
+Example: {x, y, z} {!x, y, z}. ! Denotes a negated literal
+{q,!r} {!p,r} {!q,r,p} {p,q,!q} {!r,q}
+
+Apply resolution rules by providing clause numbers and the literal on which you want to 
+resolve, e.g. 
+1:{x, y} 2:{!x, z}
+>> 1 2 x
+1:{y, z}
+Enter 'b' to backtrack, and 'done' to indicate that you have saturated resolution steps.
+Enter 'help' to display this message.
+
+1:{!r, q} 2:{!p, r} 3:{!q, p, r}
+>> 1 2 r
+
+1:{!r, q} 2:{!p, r} 3:{!q, p, r} 4:{!p, q}
+>> 2 3 p
+
+1:{!r, q} 2:{!p, r} 3:{!q, p, r} 4:{!p, q} 5:{!q, r}
+>> done
